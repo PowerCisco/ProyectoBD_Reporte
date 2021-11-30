@@ -46,17 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\Frm_usuario_cliente - Copia.cs">
+    <Compile Include="Formularios\Frm_reportes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Frm_usuario_cliente - Copia.Designer.cs">
-      <DependentUpon>Frm_usuario_cliente - Copia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Frm_usuario_cliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Frm_usuario_cliente.Designer.cs">
-      <DependentUpon>Frm_usuario_cliente.cs</DependentUpon>
+    <Compile Include="Formularios\Frm_reportes.Designer.cs">
+      <DependentUpon>Frm_reportes.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Frm_login.cs">
       <SubType>Form</SubType>
@@ -66,11 +60,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\Frm_usuario_cliente - Copia.resx">
-      <DependentUpon>Frm_usuario_cliente - Copia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Frm_usuario_cliente.resx">
-      <DependentUpon>Frm_usuario_cliente.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Frm_reportes.resx">
+      <DependentUpon>Frm_reportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_login.resx">
       <DependentUpon>Frm_login.cs</DependentUpon>
@@ -100,6 +91,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Imagenes\Captura.PNG" />
+    <Content Include="Imagenes\close-80.png" />
     <Content Include="Imagenes\login.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
