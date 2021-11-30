@@ -52,19 +52,19 @@
     <Compile Include="Formularios\Frm_reportes.Designer.cs">
       <DependentUpon>Frm_reportes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Frm_login.cs">
+    <Compile Include="Formularios\Frm_crud.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Frm_login.Designer.cs">
-      <DependentUpon>Frm_login.cs</DependentUpon>
+    <Compile Include="Formularios\Frm_crud.Designer.cs">
+      <DependentUpon>Frm_crud.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Frm_reportes.resx">
       <DependentUpon>Frm_reportes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Frm_login.resx">
-      <DependentUpon>Frm_login.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Frm_crud.resx">
+      <DependentUpon>Frm_crud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
