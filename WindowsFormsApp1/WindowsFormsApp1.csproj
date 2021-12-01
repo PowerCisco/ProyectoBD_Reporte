@@ -46,6 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\ClienteBLL.cs" />
+    <Compile Include="BLL\IncidenteBLL.cs" />
+    <Compile Include="DAL\ConexionDAL.cs" />
+    <Compile Include="DAL\IncidenteDAL.cs" />
+    <Compile Include="Formularios\formRegistroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\formRegistroCliente.Designer.cs">
+      <DependentUpon>formRegistroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\formRegistroIncidente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\formRegistroIncidente.Designer.cs">
+      <DependentUpon>formRegistroIncidente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_reportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +76,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\formRegistroCliente.resx">
+      <DependentUpon>formRegistroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\formRegistroIncidente.resx">
+      <DependentUpon>formRegistroIncidente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_reportes.resx">
       <DependentUpon>Frm_reportes.cs</DependentUpon>
     </EmbeddedResource>

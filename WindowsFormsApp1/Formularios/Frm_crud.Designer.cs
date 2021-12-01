@@ -50,9 +50,10 @@ namespace WindowsFormsApp1
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.bttn_guardar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.bttn_create = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnRegistroIncidente = new System.Windows.Forms.Button();
+            this.btnRegistroCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -105,6 +106,11 @@ namespace WindowsFormsApp1
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Abierto",
+            "En Proceso",
+            "Completado",
+            "Cancelado"});
             this.comboBox1.Location = new System.Drawing.Point(587, 164);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(100, 24);
@@ -264,44 +270,59 @@ namespace WindowsFormsApp1
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // bttn_create
-            // 
-            this.bttn_create.BackColor = System.Drawing.Color.PaleGreen;
-            this.bttn_create.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttn_create.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttn_create.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.bttn_create.Location = new System.Drawing.Point(28, 250);
-            this.bttn_create.Name = "bttn_create";
-            this.bttn_create.Size = new System.Drawing.Size(205, 71);
-            this.bttn_create.TabIndex = 25;
-            this.bttn_create.Text = "Nuevo";
-            this.bttn_create.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.PaleGreen;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
-            this.button4.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.button4.Location = new System.Drawing.Point(28, 370);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(205, 76);
-            this.button4.TabIndex = 26;
-            this.button4.Text = "Eliminar";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.PaleGreen;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
             this.button5.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.button5.Location = new System.Drawing.Point(28, 499);
+            this.button5.Location = new System.Drawing.Point(21, 179);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(205, 70);
             this.button5.TabIndex = 27;
-            this.button5.Text = "Actualizar";
+            this.button5.Text = "Buscar Incidente";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.Turquoise;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Location = new System.Drawing.Point(1063, 628);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(88, 39);
+            this.btnSalir.TabIndex = 28;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnRegistroIncidente
+            // 
+            this.btnRegistroIncidente.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnRegistroIncidente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistroIncidente.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistroIncidente.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.btnRegistroIncidente.Location = new System.Drawing.Point(21, 102);
+            this.btnRegistroIncidente.Name = "btnRegistroIncidente";
+            this.btnRegistroIncidente.Size = new System.Drawing.Size(205, 71);
+            this.btnRegistroIncidente.TabIndex = 29;
+            this.btnRegistroIncidente.Text = "Registrar Incidente";
+            this.btnRegistroIncidente.UseVisualStyleBackColor = false;
+            this.btnRegistroIncidente.Click += new System.EventHandler(this.btnRegistroIncidente_Click);
+            // 
+            // btnRegistroCliente
+            // 
+            this.btnRegistroCliente.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnRegistroCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistroCliente.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistroCliente.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.btnRegistroCliente.Location = new System.Drawing.Point(21, 23);
+            this.btnRegistroCliente.Name = "btnRegistroCliente";
+            this.btnRegistroCliente.Size = new System.Drawing.Size(205, 71);
+            this.btnRegistroCliente.TabIndex = 30;
+            this.btnRegistroCliente.Text = "Registrar Cliente";
+            this.btnRegistroCliente.UseVisualStyleBackColor = false;
+            this.btnRegistroCliente.Click += new System.EventHandler(this.button4_Click);
             // 
             // Frm_login
             // 
@@ -309,9 +330,10 @@ namespace WindowsFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ClientSize = new System.Drawing.Size(1172, 673);
+            this.Controls.Add(this.btnRegistroCliente);
+            this.Controls.Add(this.btnRegistroIncidente);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.bttn_create);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.bttn_guardar);
             this.Controls.Add(this.comboBox3);
@@ -365,9 +387,10 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button bttn_guardar;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button bttn_create;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnRegistroIncidente;
+        private System.Windows.Forms.Button btnRegistroCliente;
     }
 }
 
