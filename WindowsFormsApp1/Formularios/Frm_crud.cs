@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Formularios;
 
 namespace WindowsFormsApp1
 {
@@ -63,7 +64,32 @@ namespace WindowsFormsApp1
 
         }
 
+<<<<<<< HEAD
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+=======
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            DialogResult respuesta =  MessageBox.Show("¿Seguro que desea salir?","¿Salir?",MessageBoxButtons.YesNo);
+
+            if (respuesta == DialogResult.Yes)
+                Application.Exit();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var formulario = new formRegistroCliente();
+            formulario.ShowDialog();
+        }
+
+        private void btnRegistroIncidente_Click(object sender, EventArgs e)
+        {
+            var formulario = new formRegistroIncidente();
+            formulario.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+>>>>>>> eb1123f8b667efe32d28620bd450275187bc6af9
         {
 
         }
