@@ -34,6 +34,8 @@ namespace WindowsFormsApp1
 
         private void Frm_login_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'sof108DataSet.CLIENTE' Puede moverla o quitarla según sea necesario.
+            this.cLIENTETableAdapter.Fill(this.sof108DataSet.CLIENTE);
 
         }
 
@@ -57,6 +59,11 @@ namespace WindowsFormsApp1
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
