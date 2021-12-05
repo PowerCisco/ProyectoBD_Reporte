@@ -11,5 +11,18 @@ namespace WindowsFormsApp1.BLL
         public string Cedula { get; set; }
         public string Telefono { get; set; }
         public string Email { get; set; }
+
+        public ClienteBLL(int iD, string nombre, string apellido, string cedula, string telefono, string email)
+        {
+            ID = iD;
+            Nombre = nombre;
+            Apellido = apellido;
+            Cedula = cedula;
+            Telefono = telefono;
+            Email = email;
+        }
+
     }
+
+
 }

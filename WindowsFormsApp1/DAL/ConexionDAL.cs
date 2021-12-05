@@ -56,11 +56,17 @@ namespace WindowsFormsApp1.DAL
                 Conexion.Close();
                 return DS;
             }
-            catch 
+            catch(Exception e)
             {
 
-                throw;
+                throw new Exception(e.Message)
+                {
+                    
+
+                };
             }
         }
+        //Agregar datos a Cliente
+        
     }
 }

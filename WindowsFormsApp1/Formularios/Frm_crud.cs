@@ -64,9 +64,9 @@ namespace WindowsFormsApp1
 
         }
 
-<<<<<<< HEAD
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-=======
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             DialogResult respuesta =  MessageBox.Show("¿Seguro que desea salir?","¿Salir?",MessageBoxButtons.YesNo);
@@ -78,7 +78,7 @@ namespace WindowsFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var formulario = new formRegistroCliente();
+            var formulario = new frm_reri_clien();
             formulario.ShowDialog();
         }
 
@@ -89,7 +89,38 @@ namespace WindowsFormsApp1
         }
 
         private void button5_Click(object sender, EventArgs e)
->>>>>>> eb1123f8b667efe32d28620bd450275187bc6af9
+
+        {
+
+        }
+
+        private void btt_erase_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frm_reri_clien nuevocliente = new frm_reri_clien();
+            nuevocliente.ShowDialog();
+
+        }
+
+        private void txt_coment_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bttn_create_Click(object sender, EventArgs e)
+        {
+            string limpiar = " ";
+            txt_name.Text = limpiar;
+            txt_incident.Text = limpiar;
+            txt_buscar.Text = limpiar;
+            txt_coment.Text = limpiar;
+        }
+
+        private void txt_name_TextChanged(object sender, EventArgs e)
         {
 
         }

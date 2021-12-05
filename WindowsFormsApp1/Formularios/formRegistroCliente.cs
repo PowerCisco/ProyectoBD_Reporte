@@ -4,9 +4,9 @@ using WindowsFormsApp1.BLL;
 using WindowsFormsApp1.DAL;
 namespace WindowsFormsApp1.Formularios
 {
-    public partial class formRegistroCliente : Form
+    public partial class frm_reri_clien : Form
     {
-        public formRegistroCliente()
+        public frm_reri_clien()
         {
             InitializeComponent();
         }
@@ -33,6 +33,16 @@ namespace WindowsFormsApp1.Formularios
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtCedula_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
