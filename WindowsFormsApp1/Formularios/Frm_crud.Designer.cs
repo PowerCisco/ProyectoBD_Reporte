@@ -3,6 +3,8 @@ namespace WindowsFormsApp1
 {
     partial class Frm_login
     {
+
+
         /// <summary>
         /// Variable del diseñador necesaria.
         /// </summary>
@@ -30,7 +32,7 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_login));
             this.txt_name = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -131,8 +133,8 @@ namespace WindowsFormsApp1
             this.dgv_datos.DataSource = this.cLIENTEBindingSource;
             this.dgv_datos.Location = new System.Drawing.Point(266, 298);
             this.dgv_datos.Name = "dgv_datos";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dgv_datos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dgv_datos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_datos.Size = new System.Drawing.Size(885, 300);
             this.dgv_datos.TabIndex = 7;
             this.dgv_datos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -374,6 +376,8 @@ namespace WindowsFormsApp1
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 667);
             this.panel1.TabIndex = 28;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Frm_login_MouseDown);
             // 
             // button4
             // 
@@ -427,6 +431,7 @@ namespace WindowsFormsApp1
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 184);
             this.panel2.TabIndex = 0;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Frm_login_MouseDown);
             // 
             // cLIENTETableAdapter
             // 
@@ -487,6 +492,7 @@ namespace WindowsFormsApp1
             this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Frm_login_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Frm_login_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_datos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sof108DataSet)).EndInit();

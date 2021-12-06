@@ -13,6 +13,15 @@ namespace WindowsFormsApp1
 {
     public partial class Frm_login : Form
     {
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
         public Frm_login()
         {
             InitializeComponent();
@@ -121,6 +130,20 @@ namespace WindowsFormsApp1
         }
 
         private void txt_name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Frm_login_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
