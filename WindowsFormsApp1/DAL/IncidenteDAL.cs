@@ -9,7 +9,7 @@ namespace WindowsFormsApp1.DAL
 {
     internal class IncidenteDAL
     {
-        ConexionDAL conexion;
+      /*  ConexionDAL conexion;
 
         public IncidenteDAL()
         {

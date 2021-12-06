@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,8 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\ClienteBLL.cs" />
+    <Compile Include="DAL\FDBHelper.cs" />
     <Compile Include="BLL\IncidenteBLL.cs" />
     <Compile Include="DAL\ConexionDAL.cs" />
+    <Compile Include="DAL\FCliente.cs" />
+    <Compile Include="DAL\FIncidencia.cs" />
     <Compile Include="DAL\IncidenteDAL.cs" />
     <Compile Include="Formularios\formRegistroCliente.cs">
       <SubType>Form</SubType>
@@ -56,23 +60,14 @@
     <Compile Include="Formularios\formRegistroCliente.Designer.cs">
       <DependentUpon>formRegistroCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\formRegistroIncidente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\formRegistroIncidente.Designer.cs">
-      <DependentUpon>formRegistroIncidente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Frm_reportes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Frm_reportes.Designer.cs">
-      <DependentUpon>Frm_reportes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\Frm_crud.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Frm_crud.Designer.cs">
       <DependentUpon>Frm_crud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterDataSet.cs">
+      <DependentUpon>masterDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="masterDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -93,12 +88,6 @@
     </Compile>
     <EmbeddedResource Include="Formularios\formRegistroCliente.resx">
       <DependentUpon>formRegistroCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\formRegistroIncidente.resx">
-      <DependentUpon>formRegistroIncidente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Frm_reportes.resx">
-      <DependentUpon>Frm_reportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_crud.resx">
       <DependentUpon>Frm_crud.cs</DependentUpon>

@@ -5,7 +5,7 @@ using WindowsFormsApp1.BLL;
 
 
 namespace WindowsFormsApp1.DAL
-{
+{/*
     internal class ConexionDAL
     {
         private string ConnectionString = "Server=tcp:itsc.database.windows.net,1433;Initial Catalog=sof108;Persist Security Info=False;User ID=fcastillo;Password=GarminBibsMoga48$;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
@@ -39,7 +39,7 @@ namespace WindowsFormsApp1.DAL
             }
 
         }
-
+ /*
         public DataSet EjecutarSentencia(SqlCommand sqlComando)
         {
             DataSet DS = new DataSet();
@@ -67,6 +67,7 @@ namespace WindowsFormsApp1.DAL
             }
         }
         //Agregar datos a Cliente
-        
-    }
+   
+}
+    */
 }

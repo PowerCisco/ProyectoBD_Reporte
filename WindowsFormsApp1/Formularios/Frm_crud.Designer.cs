@@ -32,20 +32,12 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_login));
             this.txt_name = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.date_time = new System.Windows.Forms.DateTimePicker();
             this.cmb_status = new System.Windows.Forms.ComboBox();
             this.dgv_datos = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nOMBREDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aPELLIDODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEDULADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tELEFONODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cLIENTEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sof108DataSet = new WindowsFormsApp1.sof108DataSet();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,20 +52,24 @@ namespace WindowsFormsApp1
             this.cmb_buscar = new System.Windows.Forms.ComboBox();
             this.bttn_guardar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btt_erase = new System.Windows.Forms.Button();
             this.btt_acc = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.bttn_create = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cLIENTETableAdapter = new WindowsFormsApp1.sof108DataSetTableAdapters.CLIENTETableAdapter();
             this.btnSalir = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.iNCIDENTEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iNCIDENTETableAdapter = new WindowsFormsApp1.sof108DataSetTableAdapters.INCIDENTETableAdapter();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_id = new System.Windows.Forms.TextBox();
+            this.sof108DataSet = new WindowsFormsApp1.sof108DataSet();
+            this.sof108DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_datos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTEBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sof108DataSet)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iNCIDENTEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sof108DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sof108DataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_name
@@ -82,21 +78,21 @@ namespace WindowsFormsApp1
             this.txt_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_name.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txt_name.Location = new System.Drawing.Point(266, 76);
+            this.txt_name.Location = new System.Drawing.Point(396, 76);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(158, 22);
             this.txt_name.TabIndex = 2;
             this.txt_name.Text = "Texto de prueba";
             this.txt_name.TextChanged += new System.EventHandler(this.txt_name_TextChanged);
             // 
-            // dateTimePicker1
+            // date_time
             // 
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.MediumTurquoise;
-            this.dateTimePicker1.Location = new System.Drawing.Point(587, 74);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 4;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.date_time.CalendarMonthBackground = System.Drawing.Color.MediumTurquoise;
+            this.date_time.Location = new System.Drawing.Point(587, 74);
+            this.date_time.Name = "date_time";
+            this.date_time.Size = new System.Drawing.Size(200, 20);
+            this.date_time.TabIndex = 4;
+            this.date_time.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // cmb_status
             // 
@@ -116,82 +112,27 @@ namespace WindowsFormsApp1
             // 
             // dgv_datos
             // 
-            this.dgv_datos.AllowUserToAddRows = false;
             this.dgv_datos.AllowUserToDeleteRows = false;
             this.dgv_datos.AllowUserToResizeColumns = false;
             this.dgv_datos.AllowUserToResizeRows = false;
-            this.dgv_datos.AutoGenerateColumns = false;
             this.dgv_datos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_datos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_datos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.nOMBREDataGridViewTextBoxColumn,
-            this.aPELLIDODataGridViewTextBoxColumn,
-            this.cEDULADataGridViewTextBoxColumn,
-            this.tELEFONODataGridViewTextBoxColumn,
-            this.eMAILDataGridViewTextBoxColumn});
-            this.dgv_datos.DataSource = this.cLIENTEBindingSource;
-            this.dgv_datos.Location = new System.Drawing.Point(266, 298);
+            this.dgv_datos.Location = new System.Drawing.Point(234, 314);
             this.dgv_datos.Name = "dgv_datos";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dgv_datos.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_datos.Size = new System.Drawing.Size(885, 300);
+            this.dgv_datos.ReadOnly = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dgv_datos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_datos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_datos.Size = new System.Drawing.Size(903, 297);
             this.dgv_datos.TabIndex = 7;
             this.dgv_datos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nOMBREDataGridViewTextBoxColumn
-            // 
-            this.nOMBREDataGridViewTextBoxColumn.DataPropertyName = "NOMBRE";
-            this.nOMBREDataGridViewTextBoxColumn.HeaderText = "NOMBRE";
-            this.nOMBREDataGridViewTextBoxColumn.Name = "nOMBREDataGridViewTextBoxColumn";
-            // 
-            // aPELLIDODataGridViewTextBoxColumn
-            // 
-            this.aPELLIDODataGridViewTextBoxColumn.DataPropertyName = "APELLIDO";
-            this.aPELLIDODataGridViewTextBoxColumn.HeaderText = "APELLIDO";
-            this.aPELLIDODataGridViewTextBoxColumn.Name = "aPELLIDODataGridViewTextBoxColumn";
-            // 
-            // cEDULADataGridViewTextBoxColumn
-            // 
-            this.cEDULADataGridViewTextBoxColumn.DataPropertyName = "CEDULA";
-            this.cEDULADataGridViewTextBoxColumn.HeaderText = "CEDULA";
-            this.cEDULADataGridViewTextBoxColumn.Name = "cEDULADataGridViewTextBoxColumn";
-            // 
-            // tELEFONODataGridViewTextBoxColumn
-            // 
-            this.tELEFONODataGridViewTextBoxColumn.DataPropertyName = "TELEFONO";
-            this.tELEFONODataGridViewTextBoxColumn.HeaderText = "TELEFONO";
-            this.tELEFONODataGridViewTextBoxColumn.Name = "tELEFONODataGridViewTextBoxColumn";
-            // 
-            // eMAILDataGridViewTextBoxColumn
-            // 
-            this.eMAILDataGridViewTextBoxColumn.DataPropertyName = "EMAIL";
-            this.eMAILDataGridViewTextBoxColumn.HeaderText = "EMAIL";
-            this.eMAILDataGridViewTextBoxColumn.Name = "eMAILDataGridViewTextBoxColumn";
-            // 
-            // cLIENTEBindingSource
-            // 
-            this.cLIENTEBindingSource.DataMember = "CLIENTE";
-            this.cLIENTEBindingSource.DataSource = this.sof108DataSet;
-            // 
-            // sof108DataSet
-            // 
-            this.sof108DataSet.DataSetName = "sof108DataSet";
-            this.sof108DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(266, 51);
+            this.label1.Location = new System.Drawing.Point(392, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 20);
             this.label1.TabIndex = 10;
@@ -321,6 +262,7 @@ namespace WindowsFormsApp1
             this.bttn_guardar.TabIndex = 23;
             this.bttn_guardar.Text = "Guardar";
             this.bttn_guardar.UseVisualStyleBackColor = false;
+            this.bttn_guardar.Click += new System.EventHandler(this.bttn_guardar_Click);
             // 
             // button2
             // 
@@ -333,21 +275,6 @@ namespace WindowsFormsApp1
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // btt_erase
-            // 
-            this.btt_erase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.btt_erase.FlatAppearance.BorderSize = 0;
-            this.btt_erase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btt_erase.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
-            this.btt_erase.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.btt_erase.Location = new System.Drawing.Point(3, 295);
-            this.btt_erase.Name = "btt_erase";
-            this.btt_erase.Size = new System.Drawing.Size(177, 71);
-            this.btt_erase.TabIndex = 26;
-            this.btt_erase.Text = "Eliminar incidente";
-            this.btt_erase.UseVisualStyleBackColor = false;
-            this.btt_erase.Click += new System.EventHandler(this.btt_erase_Click);
-            // 
             // btt_acc
             // 
             this.btt_acc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
@@ -355,7 +282,7 @@ namespace WindowsFormsApp1
             this.btt_acc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btt_acc.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
             this.btt_acc.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.btt_acc.Location = new System.Drawing.Point(0, 440);
+            this.btt_acc.Location = new System.Drawing.Point(3, 311);
             this.btt_acc.Name = "btt_acc";
             this.btt_acc.Size = new System.Drawing.Size(177, 62);
             this.btt_acc.TabIndex = 27;
@@ -365,12 +292,10 @@ namespace WindowsFormsApp1
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.bttn_create);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btt_acc);
-            this.panel1.Controls.Add(this.btt_erase);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
@@ -379,20 +304,6 @@ namespace WindowsFormsApp1
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Frm_login_MouseDown);
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
-            this.button4.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.button4.Location = new System.Drawing.Point(3, 508);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(177, 62);
-            this.button4.TabIndex = 29;
-            this.button4.Text = "Historial";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
@@ -400,7 +311,7 @@ namespace WindowsFormsApp1
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
             this.button3.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.button3.Location = new System.Drawing.Point(3, 372);
+            this.button3.Location = new System.Drawing.Point(3, 411);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(177, 62);
             this.button3.TabIndex = 28;
@@ -416,7 +327,7 @@ namespace WindowsFormsApp1
             this.bttn_create.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttn_create.ForeColor = System.Drawing.SystemColors.GrayText;
             this.bttn_create.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bttn_create.Location = new System.Drawing.Point(0, 218);
+            this.bttn_create.Location = new System.Drawing.Point(3, 218);
             this.bttn_create.Name = "bttn_create";
             this.bttn_create.Size = new System.Drawing.Size(177, 71);
             this.bttn_create.TabIndex = 25;
@@ -432,10 +343,6 @@ namespace WindowsFormsApp1
             this.panel2.Size = new System.Drawing.Size(200, 184);
             this.panel2.TabIndex = 0;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Frm_login_MouseDown);
-            // 
-            // cLIENTETableAdapter
-            // 
-            this.cLIENTETableAdapter.ClearBeforeFill = true;
             // 
             // btnSalir
             // 
@@ -461,12 +368,51 @@ namespace WindowsFormsApp1
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // iNCIDENTETableAdapter
+            // 
+            this.iNCIDENTETableAdapter.ClearBeforeFill = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DimGray;
+            this.label8.Location = new System.Drawing.Point(247, 51);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(25, 20);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "ID:";
+            // 
+            // txt_id
+            // 
+            this.txt_id.BackColor = System.Drawing.Color.Honeydew;
+            this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_id.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.txt_id.Location = new System.Drawing.Point(270, 76);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(88, 22);
+            this.txt_id.TabIndex = 30;
+            this.txt_id.Text = "Texto de prueba";
+            // 
+            // sof108DataSet
+            // 
+            this.sof108DataSet.DataSetName = "sof108DataSet";
+            this.sof108DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sof108DataSetBindingSource
+            // 
+            this.sof108DataSetBindingSource.DataSource = this.sof108DataSet;
+            this.sof108DataSetBindingSource.Position = 0;
+            // 
             // Frm_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1172, 673);
+            this.Controls.Add(this.txt_id);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.button2);
@@ -484,7 +430,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv_datos);
             this.Controls.Add(this.cmb_status);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.date_time);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -494,9 +440,10 @@ namespace WindowsFormsApp1
             this.Load += new System.EventHandler(this.Frm_login_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Frm_login_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_datos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTEBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sof108DataSet)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.iNCIDENTEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sof108DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sof108DataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -505,7 +452,7 @@ namespace WindowsFormsApp1
         #endregion
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txt_name;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker date_time;
         private System.Windows.Forms.ComboBox cmb_status;
         private System.Windows.Forms.DataGridView dgv_datos;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
@@ -524,22 +471,17 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button button2;
 
         private System.Windows.Forms.Button bttn_create;
-        private System.Windows.Forms.Button btt_erase;
         private System.Windows.Forms.Button btt_acc;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private sof108DataSet sof108DataSet;
-        private System.Windows.Forms.BindingSource cLIENTEBindingSource;
-        private sof108DataSetTableAdapters.CLIENTETableAdapter cLIENTETableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nOMBREDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aPELLIDODataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEDULADataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tELEFONODataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eMAILDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.BindingSource iNCIDENTEBindingSource;
+        private sof108DataSetTableAdapters.INCIDENTETableAdapter iNCIDENTETableAdapter;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txt_id;
+        private System.Windows.Forms.BindingSource sof108DataSetBindingSource;
+        private sof108DataSet sof108DataSet;
     }
 }
 

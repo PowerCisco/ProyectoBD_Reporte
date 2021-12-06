@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Formularios;
+using WindowsFormsApp1.DAL;
+using ProyectoBD;
+using WindowsFormsApp1.BLL;
+
 
 namespace WindowsFormsApp1
 {
     public partial class Frm_login : Form
     {
-
+        private static DataTable dt = new DataTable();
+        
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
@@ -44,9 +43,18 @@ namespace WindowsFormsApp1
 
         private void Frm_login_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'sof108DataSet.CLIENTE' Puede moverla o quitarla según sea necesario.
-            this.cLIENTETableAdapter.Fill(this.sof108DataSet.CLIENTE);
-
+            try
+            {
+                DataSet ds = FIncidencia.GetAll();
+                dt = ds.Tables[0];
+                dgv_datos.DataSource = dt;
+                
+       
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -87,14 +95,14 @@ namespace WindowsFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var formulario = new frm_reri_clien();
+            var formulario = new frm_registrocl();
             formulario.ShowDialog();
         }
 
         private void btnRegistroIncidente_Click(object sender, EventArgs e)
         {
-            var formulario = new formRegistroIncidente();
-            formulario.ShowDialog();
+          //  var formulario = new formRegistroIncidente();
+          ///  formulario.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -110,7 +118,7 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            frm_reri_clien nuevocliente = new frm_reri_clien();
+            frm_registrocl nuevocliente = new frm_registrocl();
             nuevocliente.ShowDialog();
 
         }
@@ -122,6 +130,9 @@ namespace WindowsFormsApp1
 
         private void bttn_create_Click(object sender, EventArgs e)
         {
+            frm_registrocl formcliente = new frm_registrocl();
+            formcliente.Show();
+
             string limpiar = " ";
             txt_name.Text = limpiar;
             txt_incident.Text = limpiar;
@@ -145,6 +156,23 @@ namespace WindowsFormsApp1
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void bttn_guardar_Click(object sender, EventArgs e)
+        {
+            IncidenteBLL incidente = new IncidenteBLL
+            {
+                Estado = Convert.ToString(cmb_buscar.Text),
+                Fecha = Convert.ToDateTime(DateTime.Now),
+                Comentario = txt_coment.Text
+
+              
+            };
+            FIncidencia.Insertar(incidente);
+
+
+
 
         }
     }
