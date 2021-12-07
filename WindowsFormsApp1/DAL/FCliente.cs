@@ -33,7 +33,26 @@ namespace WindowsFormsApp1.DAL
 
                 };
             return Convert.ToInt32(FDBHelper.ExecuteScalar("sp_add_cliente", dbParams));
-            //crear procedure de incertar incidente ir a base de datos.
+      
         }
+
+        public static int Actualizar(ClienteBLL cliente)
+        {
+            SqlParameter[] dbParams = new SqlParameter[]
+                {
+                                        FDBHelper.MakeParam("@ID", SqlDbType.Int, 0,cliente.ID),
+
+                    FDBHelper.MakeParam("@Nombre", SqlDbType.VarChar, 0,cliente.Nombre),
+                    FDBHelper.MakeParam("@Apellido", SqlDbType.VarChar, 0,cliente.Apellido),
+                    FDBHelper.MakeParam("@Cedula", SqlDbType.VarChar, 0,cliente.Cedula),
+                    FDBHelper.MakeParam("@Telefono", SqlDbType.VarChar, 0,cliente.Telefono),
+                     FDBHelper.MakeParam("@Email", SqlDbType.VarChar, 0,cliente.Email)
+
+
+                };
+            return Convert.ToInt32(FDBHelper.ExecuteScalar("sp_update_cliente", dbParams));
+                    }
     }
+
 }
+ 

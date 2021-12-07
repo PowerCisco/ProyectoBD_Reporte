@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1
 {
-    partial class Frm_login
+    partial class Frm_crud
     {
 
 
@@ -32,21 +32,20 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_login));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_crud));
             this.txt_name = new System.Windows.Forms.TextBox();
-            this.date_time = new System.Windows.Forms.DateTimePicker();
+            this.dt_time = new System.Windows.Forms.DateTimePicker();
             this.cmb_status = new System.Windows.Forms.ComboBox();
             this.dgv_datos = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txt_incident = new System.Windows.Forms.TextBox();
+            this.txt_incident_id = new System.Windows.Forms.TextBox();
             this.txt_coment = new System.Windows.Forms.TextBox();
             this.txt_buscar = new System.Windows.Forms.TextBox();
             this.cmb_buscar = new System.Windows.Forms.ComboBox();
@@ -65,6 +64,13 @@ namespace WindowsFormsApp1
             this.txt_id = new System.Windows.Forms.TextBox();
             this.sof108DataSet = new WindowsFormsApp1.sof108DataSet();
             this.sof108DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtcedula = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtapellido = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.txt_id1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_datos)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iNCIDENTEBindingSource)).BeginInit();
@@ -78,21 +84,20 @@ namespace WindowsFormsApp1
             this.txt_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_name.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txt_name.Location = new System.Drawing.Point(396, 76);
+            this.txt_name.Location = new System.Drawing.Point(238, 105);
             this.txt_name.Name = "txt_name";
-            this.txt_name.Size = new System.Drawing.Size(158, 22);
+            this.txt_name.Size = new System.Drawing.Size(138, 22);
             this.txt_name.TabIndex = 2;
-            this.txt_name.Text = "Texto de prueba";
             this.txt_name.TextChanged += new System.EventHandler(this.txt_name_TextChanged);
             // 
-            // date_time
+            // dt_time
             // 
-            this.date_time.CalendarMonthBackground = System.Drawing.Color.MediumTurquoise;
-            this.date_time.Location = new System.Drawing.Point(587, 74);
-            this.date_time.Name = "date_time";
-            this.date_time.Size = new System.Drawing.Size(200, 20);
-            this.date_time.TabIndex = 4;
-            this.date_time.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dt_time.CalendarMonthBackground = System.Drawing.Color.MediumTurquoise;
+            this.dt_time.Location = new System.Drawing.Point(549, 140);
+            this.dt_time.Name = "dt_time";
+            this.dt_time.Size = new System.Drawing.Size(253, 20);
+            this.dt_time.TabIndex = 4;
+            this.dt_time.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // cmb_status
             // 
@@ -105,7 +110,7 @@ namespace WindowsFormsApp1
             "En Proceso",
             "Completado",
             "Cancelado"});
-            this.cmb_status.Location = new System.Drawing.Point(587, 164);
+            this.cmb_status.Location = new System.Drawing.Point(628, 221);
             this.cmb_status.Name = "cmb_status";
             this.cmb_status.Size = new System.Drawing.Size(100, 24);
             this.cmb_status.TabIndex = 5;
@@ -120,11 +125,12 @@ namespace WindowsFormsApp1
             this.dgv_datos.Location = new System.Drawing.Point(234, 314);
             this.dgv_datos.Name = "dgv_datos";
             this.dgv_datos.ReadOnly = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dgv_datos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dgv_datos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_datos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_datos.Size = new System.Drawing.Size(903, 297);
             this.dgv_datos.TabIndex = 7;
+            this.dgv_datos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_datos_CellClick);
             this.dgv_datos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
@@ -132,7 +138,7 @@ namespace WindowsFormsApp1
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(392, 51);
+            this.label1.Location = new System.Drawing.Point(230, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 20);
             this.label1.TabIndex = 10;
@@ -151,67 +157,51 @@ namespace WindowsFormsApp1
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(266, 139);
+            this.label3.Location = new System.Drawing.Point(614, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 20);
+            this.label3.Size = new System.Drawing.Size(60, 20);
             this.label3.TabIndex = 12;
-            this.label3.Text = "Incidente:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(583, 51);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 20);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Fecha:";
+            this.label3.Text = "IDcliente";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(584, 139);
+            this.label5.Location = new System.Drawing.Point(624, 192);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 20);
+            this.label5.Size = new System.Drawing.Size(56, 20);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Status:";
+            this.label5.Text = "Estatus:";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(873, 51);
+            this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 20);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Comentario:";
+            this.label6.Size = new System.Drawing.Size(100, 23);
+            this.label6.TabIndex = 38;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(266, 234);
+            this.label7.Location = new System.Drawing.Point(230, 253);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 20);
             this.label7.TabIndex = 16;
             this.label7.Text = "Buscar:";
             // 
-            // txt_incident
+            // txt_incident_id
             // 
-            this.txt_incident.BackColor = System.Drawing.Color.Honeydew;
-            this.txt_incident.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_incident.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_incident.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txt_incident.Location = new System.Drawing.Point(266, 165);
-            this.txt_incident.Name = "txt_incident";
-            this.txt_incident.Size = new System.Drawing.Size(158, 22);
-            this.txt_incident.TabIndex = 19;
-            this.txt_incident.Text = "Texto de prueba";
+            this.txt_incident_id.BackColor = System.Drawing.Color.Honeydew;
+            this.txt_incident_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_incident_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_incident_id.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.txt_incident_id.Location = new System.Drawing.Point(617, 71);
+            this.txt_incident_id.Name = "txt_incident_id";
+            this.txt_incident_id.Size = new System.Drawing.Size(65, 22);
+            this.txt_incident_id.TabIndex = 19;
             // 
             // txt_coment
             // 
@@ -219,13 +209,12 @@ namespace WindowsFormsApp1
             this.txt_coment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_coment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_coment.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txt_coment.Location = new System.Drawing.Point(877, 74);
+            this.txt_coment.Location = new System.Drawing.Point(863, 94);
             this.txt_coment.Multiline = true;
             this.txt_coment.Name = "txt_coment";
             this.txt_coment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_coment.Size = new System.Drawing.Size(274, 153);
             this.txt_coment.TabIndex = 20;
-            this.txt_coment.Text = "Texto de prueba";
             this.txt_coment.TextChanged += new System.EventHandler(this.txt_coment_TextChanged);
             // 
             // txt_buscar
@@ -234,11 +223,11 @@ namespace WindowsFormsApp1
             this.txt_buscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_buscar.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txt_buscar.Location = new System.Drawing.Point(266, 257);
+            this.txt_buscar.Location = new System.Drawing.Point(234, 276);
             this.txt_buscar.Name = "txt_buscar";
             this.txt_buscar.Size = new System.Drawing.Size(182, 22);
             this.txt_buscar.TabIndex = 21;
-            this.txt_buscar.Text = "Texto de prueba";
+            this.txt_buscar.TextChanged += new System.EventHandler(this.txt_buscar_TextChanged);
             // 
             // cmb_buscar
             // 
@@ -246,10 +235,16 @@ namespace WindowsFormsApp1
             this.cmb_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmb_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cmb_buscar.FormattingEnabled = true;
-            this.cmb_buscar.Location = new System.Drawing.Point(454, 257);
+            this.cmb_buscar.Items.AddRange(new object[] {
+            "ESTADO",
+            "NOMBRE_CLIENTE",
+            "COMENTARIO"});
+            this.cmb_buscar.Location = new System.Drawing.Point(422, 274);
             this.cmb_buscar.Name = "cmb_buscar";
             this.cmb_buscar.Size = new System.Drawing.Size(100, 24);
             this.cmb_buscar.TabIndex = 22;
+            this.cmb_buscar.Text = "ESTADO";
+            this.cmb_buscar.SelectedIndexChanged += new System.EventHandler(this.cmb_buscar_SelectedIndexChanged);
             // 
             // bttn_guardar
             // 
@@ -286,8 +281,8 @@ namespace WindowsFormsApp1
             this.btt_acc.Name = "btt_acc";
             this.btt_acc.Size = new System.Drawing.Size(177, 62);
             this.btt_acc.TabIndex = 27;
-            this.btt_acc.Text = "Editar incidente";
             this.btt_acc.UseVisualStyleBackColor = false;
+            this.btt_acc.Click += new System.EventHandler(this.btt_acc_Click);
             // 
             // panel1
             // 
@@ -311,7 +306,7 @@ namespace WindowsFormsApp1
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
             this.button3.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.button3.Location = new System.Drawing.Point(3, 411);
+            this.button3.Location = new System.Drawing.Point(3, 390);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(177, 62);
             this.button3.TabIndex = 28;
@@ -348,7 +343,7 @@ namespace WindowsFormsApp1
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Turquoise;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Location = new System.Drawing.Point(821, 628);
+            this.btnSalir.Location = new System.Drawing.Point(1049, 631);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(88, 39);
             this.btnSalir.TabIndex = 28;
@@ -377,7 +372,7 @@ namespace WindowsFormsApp1
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(247, 51);
+            this.label8.Location = new System.Drawing.Point(230, 13);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(25, 20);
             this.label8.TabIndex = 29;
@@ -385,15 +380,12 @@ namespace WindowsFormsApp1
             // 
             // txt_id
             // 
-            this.txt_id.BackColor = System.Drawing.Color.Honeydew;
-            this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_id.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txt_id.Location = new System.Drawing.Point(270, 76);
+            this.txt_id.Enabled = false;
+            this.txt_id.Location = new System.Drawing.Point(234, 40);
             this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(88, 22);
-            this.txt_id.TabIndex = 30;
-            this.txt_id.Text = "Texto de prueba";
+            this.txt_id.Size = new System.Drawing.Size(37, 20);
+            this.txt_id.TabIndex = 37;
+            this.txt_id.TextChanged += new System.EventHandler(this.txt_id_TextChanged_1);
             // 
             // sof108DataSet
             // 
@@ -405,12 +397,91 @@ namespace WindowsFormsApp1
             this.sof108DataSetBindingSource.DataSource = this.sof108DataSet;
             this.sof108DataSetBindingSource.Position = 0;
             // 
-            // Frm_login
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(232, 141);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(63, 20);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Apellido:";
+            // 
+            // txtcedula
+            // 
+            this.txtcedula.Location = new System.Drawing.Point(236, 227);
+            this.txtcedula.Name = "txtcedula";
+            this.txtcedula.Size = new System.Drawing.Size(100, 20);
+            this.txtcedula.TabIndex = 36;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.DimGray;
+            this.label10.Location = new System.Drawing.Point(234, 205);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(55, 20);
+            this.label10.TabIndex = 34;
+            this.label10.Text = "Cedula:";
+            // 
+            // txtapellido
+            // 
+            this.txtapellido.BackColor = System.Drawing.Color.Honeydew;
+            this.txtapellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtapellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtapellido.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.txtapellido.Location = new System.Drawing.Point(238, 165);
+            this.txtapellido.Name = "txtapellido";
+            this.txtapellido.Size = new System.Drawing.Size(138, 22);
+            this.txtapellido.TabIndex = 35;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.DimGray;
+            this.label11.Location = new System.Drawing.Point(859, 70);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(77, 20);
+            this.label11.TabIndex = 39;
+            this.label11.Text = "Comentario";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Turquoise;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(958, 631);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(85, 39);
+            this.button4.TabIndex = 40;
+            this.button4.Text = "Actualizar tabla";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
+            // txt_id1
+            // 
+            this.txt_id1.Enabled = false;
+            this.txt_id1.Location = new System.Drawing.Point(277, 40);
+            this.txt_id1.Name = "txt_id1";
+            this.txt_id1.Size = new System.Drawing.Size(37, 20);
+            this.txt_id1.TabIndex = 41;
+            // 
+            // Frm_crud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1172, 673);
+            this.Controls.Add(this.txt_id1);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtapellido);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtcedula);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel1);
@@ -420,21 +491,20 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.cmb_buscar);
             this.Controls.Add(this.txt_buscar);
             this.Controls.Add(this.txt_coment);
-            this.Controls.Add(this.txt_incident);
+            this.Controls.Add(this.txt_incident_id);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv_datos);
             this.Controls.Add(this.cmb_status);
-            this.Controls.Add(this.date_time);
+            this.Controls.Add(this.dt_time);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Frm_login";
+            this.Name = "Frm_crud";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Frm_login_Load);
@@ -452,18 +522,17 @@ namespace WindowsFormsApp1
         #endregion
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txt_name;
-        private System.Windows.Forms.DateTimePicker date_time;
+        private System.Windows.Forms.DateTimePicker dt_time;
         private System.Windows.Forms.ComboBox cmb_status;
         private System.Windows.Forms.DataGridView dgv_datos;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txt_incident;
+        private System.Windows.Forms.TextBox txt_incident_id;
         private System.Windows.Forms.TextBox txt_coment;
         private System.Windows.Forms.TextBox txt_buscar;
         private System.Windows.Forms.ComboBox cmb_buscar;
@@ -482,6 +551,13 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.BindingSource sof108DataSetBindingSource;
         private sof108DataSet sof108DataSet;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtcedula;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtapellido;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox txt_id1;
     }
 }
 

@@ -2,6 +2,8 @@
 using System.Data.SqlClient;
 using ProyectoBD;
 using WindowsFormsApp1.BLL;
+using System;
+
 
 namespace WindowsFormsApp1.DAL
 {
@@ -17,16 +19,33 @@ namespace WindowsFormsApp1.DAL
         
         }
 
-        public static DataSet Insertar(IncidenteBLL incidente)
+        public static int Insertar(IncidenteBLL incidente)
         {
             SqlParameter[] dbParams = new SqlParameter[]
                 {
                     FDBHelper.MakeParam("@Estado", SqlDbType.VarChar, 0,incidente.Estado),
                     FDBHelper.MakeParam("@Fecha", SqlDbType.DateTime, 0,incidente.Fecha),
                     FDBHelper.MakeParam("@Comentario", SqlDbType.VarChar, 0,incidente.Comentario),
+                    FDBHelper.MakeParam("@IDcliente", SqlDbType.Int, 0,incidente.IDCliente),
                 };
-            return FDBHelper.ExecuteDataSet("sp_add_incidentes", dbParams);
-            //crear procedure de incertar incidente ir a base de datos.
+            return Convert.ToInt32(FDBHelper.ExecuteScalar("sp_add_incidentes", dbParams));
+           
+        }
+
+        public static int Actualizar(IncidenteBLL incidente)
+        {
+            SqlParameter[] dbParams = new SqlParameter[]
+                {
+                     FDBHelper.MakeParam("@ID", SqlDbType.Int, 0,incidente.ID),
+
+                    FDBHelper.MakeParam("@Estado", SqlDbType.VarChar, 0, incidente.Estado),
+                    FDBHelper.MakeParam("@Fecha", SqlDbType.DateTime, 0, incidente.Fecha),
+                   FDBHelper.MakeParam("@Comentario", SqlDbType.VarChar, 0,incidente.Comentario),
+           
+
+                };
+            return Convert.ToInt32(FDBHelper.ExecuteScalar("sp_update_incidentes", dbParams));
+
         }
     }
 }
