@@ -95,7 +95,7 @@ namespace WindowsFormsApp1.Formularios
         {
             try
             {
-                if (txtid.Text == "")
+                if (txtid.Text =="")
                 {
                     ClienteBLL cliente = new ClienteBLL
                     {

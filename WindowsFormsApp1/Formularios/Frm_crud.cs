@@ -162,9 +162,10 @@ namespace WindowsFormsApp1
             frm_registrocl formcliente = new frm_registrocl();
             formcliente.SetFlag("1");
             formcliente.ShowDialog();
-
+            bttn_guardar.Visible = false;
+            btt_insr.Visible = true;
             string limpiar = " ";
-            txt_id.Text = limpiar;
+           // txt_id.Text = limpiar;
             txt_name.Text = limpiar;
             txt_incident_id.Text = limpiar;
             txt_buscar.Text = limpiar;
@@ -192,30 +193,10 @@ namespace WindowsFormsApp1
 
         private void bttn_guardar_Click(object sender, EventArgs e)
         {
-            if (txt_id.Text == "")
-            {
-                IncidenteBLL incidente = new IncidenteBLL
-                {
-                    Estado = cmb_status.SelectedItem.ToString(),
-                    Fecha = DateTime.Now,
-                    IDCliente = Convert.ToInt32(txt_incident_id.Text),
-                    Comentario = txt_coment.Text
+        
 
 
 
-                };
-                if (FIncidencia.Insertar(incidente) > 0)
-                {
-                    MessageBox.Show("Insertado Correctamente");
-                    Frm_login_Load(null, null);
-
-                }
-
-
-
-
-            }
-            else {
 
 
 
@@ -224,7 +205,7 @@ namespace WindowsFormsApp1
                     ID = Convert.ToInt32(txt_id.Text),
                     Estado = cmb_status.SelectedItem.ToString(),
                     Comentario = txt_coment.Text,
-                    Fecha = DateTime.Now
+                    Fecha = dtt_time.Value,
                 };
                 if (FIncidencia.Actualizar(incidiente) == 1)
                 {
@@ -244,7 +225,7 @@ namespace WindowsFormsApp1
 
 
 
-            }
+            
 
         }
 
@@ -303,7 +284,7 @@ namespace WindowsFormsApp1
                 txt_coment.Text = dgv_datos.CurrentRow.Cells[6].Value.ToString();
             }
         }
-
+        
         private void button4_Click_1(object sender, EventArgs e)
         {
             Frm_login_Load(null, null);
@@ -313,6 +294,34 @@ namespace WindowsFormsApp1
         private void txt_id_TextChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            IncidenteBLL incidente = new IncidenteBLL
+            {
+                Estado = cmb_status.SelectedItem.ToString(),
+                Fecha = dtt_time.Value,
+                IDCliente = Convert.ToInt32(txt_incident_id.Text),
+                Comentario = txt_coment.Text
+
+
+
+            };
+            if (FIncidencia.Insertar(incidente) > 0)
+            {
+                MessageBox.Show("Insertado Correctamente");
+                bttn_guardar.Visible = false;
+                Frm_login_Load(null, null);
+
+            }
+        }
+
+        private void btt_Incidente_Click(object sender, EventArgs e)
+        {
+            btt_insr.Visible = false;
+          
+            bttn_guardar.Visible = true;
         }
     }
 }

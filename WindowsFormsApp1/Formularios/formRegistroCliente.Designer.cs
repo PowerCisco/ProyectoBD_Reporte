@@ -300,6 +300,7 @@
             // 
             // flag
             // 
+            this.flag.Enabled = false;
             this.flag.Location = new System.Drawing.Point(527, 12);
             this.flag.Name = "flag";
             this.flag.Size = new System.Drawing.Size(32, 20);

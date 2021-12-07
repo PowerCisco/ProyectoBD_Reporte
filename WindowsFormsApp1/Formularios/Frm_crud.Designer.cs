@@ -32,10 +32,9 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_crud));
             this.txt_name = new System.Windows.Forms.TextBox();
-            this.dt_time = new System.Windows.Forms.DateTimePicker();
             this.cmb_status = new System.Windows.Forms.ComboBox();
             this.dgv_datos = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -50,8 +49,6 @@ namespace WindowsFormsApp1
             this.txt_buscar = new System.Windows.Forms.TextBox();
             this.cmb_buscar = new System.Windows.Forms.ComboBox();
             this.bttn_guardar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btt_acc = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.bttn_create = new System.Windows.Forms.Button();
@@ -70,7 +67,10 @@ namespace WindowsFormsApp1
             this.txtapellido = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.txt_id1 = new System.Windows.Forms.TextBox();
+            this.btt_insr = new System.Windows.Forms.Button();
+            this.btt_Incidente = new System.Windows.Forms.Button();
+            this.dtt_time = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_datos)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iNCIDENTEBindingSource)).BeginInit();
@@ -89,15 +89,6 @@ namespace WindowsFormsApp1
             this.txt_name.Size = new System.Drawing.Size(138, 22);
             this.txt_name.TabIndex = 2;
             this.txt_name.TextChanged += new System.EventHandler(this.txt_name_TextChanged);
-            // 
-            // dt_time
-            // 
-            this.dt_time.CalendarMonthBackground = System.Drawing.Color.MediumTurquoise;
-            this.dt_time.Location = new System.Drawing.Point(549, 140);
-            this.dt_time.Name = "dt_time";
-            this.dt_time.Size = new System.Drawing.Size(253, 20);
-            this.dt_time.TabIndex = 4;
-            this.dt_time.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // cmb_status
             // 
@@ -125,8 +116,8 @@ namespace WindowsFormsApp1
             this.dgv_datos.Location = new System.Drawing.Point(234, 314);
             this.dgv_datos.Name = "dgv_datos";
             this.dgv_datos.ReadOnly = true;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dgv_datos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dgv_datos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_datos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_datos.Size = new System.Drawing.Size(903, 297);
             this.dgv_datos.TabIndex = 7;
@@ -157,7 +148,7 @@ namespace WindowsFormsApp1
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(614, 38);
+            this.label3.Location = new System.Drawing.Point(626, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 20);
             this.label3.TabIndex = 12;
@@ -168,7 +159,7 @@ namespace WindowsFormsApp1
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(624, 192);
+            this.label5.Location = new System.Drawing.Point(624, 198);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 20);
             this.label5.TabIndex = 14;
@@ -198,7 +189,7 @@ namespace WindowsFormsApp1
             this.txt_incident_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_incident_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_incident_id.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txt_incident_id.Location = new System.Drawing.Point(617, 71);
+            this.txt_incident_id.Location = new System.Drawing.Point(628, 65);
             this.txt_incident_id.Name = "txt_incident_id";
             this.txt_incident_id.Size = new System.Drawing.Size(65, 22);
             this.txt_incident_id.TabIndex = 19;
@@ -209,7 +200,7 @@ namespace WindowsFormsApp1
             this.txt_coment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_coment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_coment.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txt_coment.Location = new System.Drawing.Point(863, 94);
+            this.txt_coment.Location = new System.Drawing.Point(863, 65);
             this.txt_coment.Multiline = true;
             this.txt_coment.Name = "txt_coment";
             this.txt_coment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -251,46 +242,21 @@ namespace WindowsFormsApp1
             this.bttn_guardar.BackColor = System.Drawing.Color.Turquoise;
             this.bttn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttn_guardar.ForeColor = System.Drawing.Color.Black;
-            this.bttn_guardar.Location = new System.Drawing.Point(266, 628);
+            this.bttn_guardar.Location = new System.Drawing.Point(234, 628);
             this.bttn_guardar.Name = "bttn_guardar";
             this.bttn_guardar.Size = new System.Drawing.Size(85, 39);
             this.bttn_guardar.TabIndex = 23;
-            this.bttn_guardar.Text = "Guardar";
+            this.bttn_guardar.Text = "Guardar Edicion";
             this.bttn_guardar.UseVisualStyleBackColor = false;
             this.bttn_guardar.Click += new System.EventHandler(this.bttn_guardar_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Turquoise;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(375, 628);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 39);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // btt_acc
-            // 
-            this.btt_acc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.btt_acc.FlatAppearance.BorderSize = 0;
-            this.btt_acc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btt_acc.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
-            this.btt_acc.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.btt_acc.Location = new System.Drawing.Point(3, 311);
-            this.btt_acc.Name = "btt_acc";
-            this.btt_acc.Size = new System.Drawing.Size(177, 62);
-            this.btt_acc.TabIndex = 27;
-            this.btt_acc.UseVisualStyleBackColor = false;
-            this.btt_acc.Click += new System.EventHandler(this.btt_acc_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.panel1.Controls.Add(this.btt_Incidente);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.bttn_create);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.btt_acc);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
@@ -306,7 +272,7 @@ namespace WindowsFormsApp1
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
             this.button3.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.button3.Location = new System.Drawing.Point(3, 390);
+            this.button3.Location = new System.Drawing.Point(20, 470);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(177, 62);
             this.button3.TabIndex = 28;
@@ -322,7 +288,7 @@ namespace WindowsFormsApp1
             this.bttn_create.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttn_create.ForeColor = System.Drawing.SystemColors.GrayText;
             this.bttn_create.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bttn_create.Location = new System.Drawing.Point(3, 218);
+            this.bttn_create.Location = new System.Drawing.Point(20, 218);
             this.bttn_create.Name = "bttn_create";
             this.bttn_create.Size = new System.Drawing.Size(177, 71);
             this.bttn_create.TabIndex = 25;
@@ -442,7 +408,7 @@ namespace WindowsFormsApp1
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DimGray;
-            this.label11.Location = new System.Drawing.Point(859, 70);
+            this.label11.Location = new System.Drawing.Point(859, 40);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(77, 20);
             this.label11.TabIndex = 39;
@@ -461,13 +427,52 @@ namespace WindowsFormsApp1
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
-            // txt_id1
+            // btt_insr
             // 
-            this.txt_id1.Enabled = false;
-            this.txt_id1.Location = new System.Drawing.Point(277, 40);
-            this.txt_id1.Name = "txt_id1";
-            this.txt_id1.Size = new System.Drawing.Size(37, 20);
-            this.txt_id1.TabIndex = 41;
+            this.btt_insr.BackColor = System.Drawing.Color.Turquoise;
+            this.btt_insr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btt_insr.ForeColor = System.Drawing.Color.Black;
+            this.btt_insr.Location = new System.Drawing.Point(348, 628);
+            this.btt_insr.Name = "btt_insr";
+            this.btt_insr.Size = new System.Drawing.Size(85, 39);
+            this.btt_insr.TabIndex = 42;
+            this.btt_insr.Text = "Guardar Insercion";
+            this.btt_insr.UseVisualStyleBackColor = false;
+            this.btt_insr.Click += new System.EventHandler(this.button5_Click_1);
+            // 
+            // btt_Incidente
+            // 
+            this.btt_Incidente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.btt_Incidente.FlatAppearance.BorderSize = 0;
+            this.btt_Incidente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btt_Incidente.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btt_Incidente.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.btt_Incidente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btt_Incidente.Location = new System.Drawing.Point(20, 346);
+            this.btt_Incidente.Name = "btt_Incidente";
+            this.btt_Incidente.Size = new System.Drawing.Size(177, 71);
+            this.btt_Incidente.TabIndex = 29;
+            this.btt_Incidente.Text = "Editar incidente";
+            this.btt_Incidente.UseVisualStyleBackColor = false;
+            this.btt_Incidente.Click += new System.EventHandler(this.btt_Incidente_Click);
+            // 
+            // dtt_time
+            // 
+            this.dtt_time.Location = new System.Drawing.Point(628, 141);
+            this.dtt_time.Name = "dtt_time";
+            this.dtt_time.Size = new System.Drawing.Size(200, 20);
+            this.dtt_time.TabIndex = 43;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(626, 118);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 20);
+            this.label4.TabIndex = 44;
+            this.label4.Text = "Fecha:";
             // 
             // Frm_crud
             // 
@@ -475,7 +480,9 @@ namespace WindowsFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1172, 673);
-            this.Controls.Add(this.txt_id1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dtt_time);
+            this.Controls.Add(this.btt_insr);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtapellido);
@@ -486,7 +493,6 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.bttn_guardar);
             this.Controls.Add(this.cmb_buscar);
             this.Controls.Add(this.txt_buscar);
@@ -500,7 +506,6 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv_datos);
             this.Controls.Add(this.cmb_status);
-            this.Controls.Add(this.dt_time);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -522,7 +527,6 @@ namespace WindowsFormsApp1
         #endregion
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txt_name;
-        private System.Windows.Forms.DateTimePicker dt_time;
         private System.Windows.Forms.ComboBox cmb_status;
         private System.Windows.Forms.DataGridView dgv_datos;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
@@ -537,10 +541,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox txt_buscar;
         private System.Windows.Forms.ComboBox cmb_buscar;
         private System.Windows.Forms.Button bttn_guardar;
-        private System.Windows.Forms.Button button2;
 
         private System.Windows.Forms.Button bttn_create;
-        private System.Windows.Forms.Button btt_acc;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnSalir;
@@ -557,7 +559,10 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox txtapellido;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox txt_id1;
+        private System.Windows.Forms.Button btt_insr;
+        private System.Windows.Forms.Button btt_Incidente;
+        private System.Windows.Forms.DateTimePicker dtt_time;
+        private System.Windows.Forms.Label label4;
     }
 }
 
