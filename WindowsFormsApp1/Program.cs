@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         static void Main()
         {
             Application.EnableVisualStyles();
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(Frm_crud.Getinstance());
         }
